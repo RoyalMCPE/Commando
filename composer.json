@@ -4,7 +4,7 @@
     "type": "library",
     "license": "LGPL-3.0-only",
     "require": {
-        "muqsit/simple-packet-handler": "^0.1.3"
+        "muqsit/simple-packet-handler": "dev-pm5"
     },
     "autoload": {
         "psr-4": {"CortexPE\\Commando\\": ["src/CortexPE/Commando/"]}
