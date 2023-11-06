@@ -6,6 +6,9 @@
     "require": {
         "muqsit/simple-packet-handler": "dev-pm5#71af78006b2bbed324f48deebbdabfae222b432a"
     },
+    "require-dev": {
+        "pocketmine/pocketmine-mp": "^5.0.0"
+    },
     "autoload": {
         "psr-4": {"CortexPE\\Commando\\": ["src/CortexPE/Commando/"]}
     },

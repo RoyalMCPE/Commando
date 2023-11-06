@@ -44,7 +44,6 @@ use pocketmine\network\mcpe\protocol\types\command\CommandParameter;
 use pocketmine\plugin\Plugin;
 use pocketmine\Server;
 use ReflectionClass;
-use function array_unshift;
 use function count;
 
 class PacketHooker implements Listener {
@@ -68,7 +67,7 @@ class PacketHooker implements Listener {
 			$p = $target->getPlayer();
 			foreach($pk->commandData as $commandName => $commandData) {
 				$cmd = Server::getInstance()->getCommandMap()->getCommand($commandName);
-				if($cmd instanceof BaseCommand) {
+				if($cmd instanceof IRunnable) {
 					foreach($cmd->getConstraints() as $constraint){
 						if(!$constraint->isVisibleTo($p)){
 							continue 2;
@@ -93,7 +92,7 @@ class PacketHooker implements Listener {
 	 *
 	 * @return CommandOverload[]
 	 */
-	private static function generateOverloads(CommandSender $cs, BaseCommand $command): array {
+	private static function generateOverloads(CommandSender $cs, IRunnable $command): array {
 		$overloads = [];
 
 		foreach($command->getSubCommands() as $label => $subCommand) {

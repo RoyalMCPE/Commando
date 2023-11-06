@@ -56,6 +56,11 @@ interface IRunnable {
     public function getPermissions(): array;
 
     /**
+     * @return BaseSubCommand[]
+     */
+    public function getSubCommands(): array;
+
+    /**
      * @return BaseConstraint[]
      */
     public function getConstraints():array;
